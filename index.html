@@ -3,23 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="5,000+ faceless aesthetic stock videos for Instagram Reels & TikTok. One-time $37. Lifetime access.">
 <title>Elan Visual — 5000+ Faceless Aesthetic Stock Videos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Preconnect for faster font load -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Load fonts async — non-blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
 <style>
   :root {
-    --cream: #0A0A0A;
-    --warm-white: #111111;
-    --charcoal: #FFFFFF;
-    --mocha: #F5F5F5;
-    --gold: #0A0A0A;
-    --gold-light: #222222;
-    --rose: #888888;
-    --sage: #555555;
-    --urgent-red: #0A0A0A;
-    --text-muted: #666666;
-    --border: rgba(0,0,0,0.1);
     --electric: #52C5D8;
     --lime: #DDED8C;
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --bg: #FFFFFF;
+    --text: #1A1A1A;
+    --text-muted: #666666;
+    --border: rgba(0,0,0,0.1);
+    --bg-soft: #F7F5F2;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +35,8 @@
     background: #FFFFFF;
     color: #1A1A1A;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
   }
 
   /* ── STICKY TOP BAR ── */
@@ -51,6 +57,12 @@
     gap: 12px;
   }
   .top-bar strong { font-weight: 600; }
+  .tb-short { display: none; }
+  @media (max-width: 600px) {
+    .tb-full { display: none; }
+    .tb-short { display: inline; }
+    .top-bar { font-size: 12px; gap: 6px; padding: 10px 12px; }
+  }
   #countdown {
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px;
@@ -81,17 +93,6 @@
                 radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,0,0,0.015) 0%, transparent 60%);
   }
 
-  /* animated film grain */
-  .grain {
-    position: fixed; inset: -50%;
-    width: 200%; height: 200%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 200;
-    animation: grain 0.5s steps(2) infinite;
-  }
-  @keyframes grain { 0%{transform:translate(0,0)} 25%{transform:translate(-2%,-3%)} 50%{transform:translate(3%,1%)} 75%{transform:translate(-1%,2%)} 100%{transform:translate(2%,-1%)} }
 
   .hero-eyebrow {
     font-size: 11px;
@@ -231,8 +232,10 @@
   .strip-track {
     display: flex;
     gap: 16px;
-    animation: scrollLeft 28s linear infinite;
+    animation: scrollLeft 32s linear infinite;
     width: max-content;
+    will-change: transform;
+    contain: layout style;
   }
   .strip-track:hover { animation-play-state: paused; }
   .strip-card {
@@ -330,6 +333,15 @@
   @keyframes scrollLeft {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  /* ── PERFORMANCE: skip rendering off-screen sections ── */
+  .proof-section,
+  .compare-section,
+  .faq-section,
+  .carousel-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
   }
 
   /* ── PAIN POINTS ── */
@@ -972,8 +984,11 @@
 
   .spots-left {
     font-size: 12px;
-    color: var(--electric);
+    color: #FFFFFF !important;
     letter-spacing: 0.08em;
+  }
+  .spots-left strong {
+    color: #FFFFFF !important;
   }
 
   /* ── OFFER COUNTDOWN ── */
@@ -1169,12 +1184,9 @@
 </head>
 <body>
 
-<div class="grain"></div>
-
 <!-- TOP URGENCY BAR -->
 <div class="top-bar">
-  ⚡ Limited Launch Offer — Only <strong id="spots">47</strong> spots left at this price.&nbsp;
-  Ends in: <span id="countdown">00:00:00</span>
+  ⚡ <span class="tb-full">Limited Launch Offer — Only <strong id="spots">47</strong> spots left at this price.&nbsp; Ends in:</span><span class="tb-short">Only <strong id="spots-m">47</strong> left —</span> <span id="countdown">00:00:00</span>
 </div>
 
 <!-- HERO -->
@@ -1246,66 +1258,68 @@
   <p class="strip-label">Categories included in your pack</p>
   <div style="overflow:hidden;">
     <div class="strip-track" id="stripTrack">
-      <!-- Cards — replace PASTE_PUBLIC_ID_X with your Cloudinary Public ID -->
-      <div class="strip-card c1" data-label="Wellness">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_WELLNESS.mp4"></video>
+      <!-- Cards -->
+      <div class="strip-card c1" data-label="Lifestyle">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Wellness<br>&amp; Beauty</div>
+        <div class="strip-card-inner">Lifestyle</div>
       </div>
-      <div class="strip-card c2" data-label="Nature">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_NATURE.mp4"></video>
+      <div class="strip-card c2" data-label="Unisex">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_UNISEX_LUXURY_300_fava6j.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Nature<br>&amp; Botanical</div>
+        <div class="strip-card-inner">Unisex</div>
       </div>
-      <div class="strip-card c3" data-label="Lifestyle">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_LIFESTYLE.mp4"></video>
+      <div class="strip-card c3" data-label="Luxury">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_bvfovm.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Luxury<br>Lifestyle</div>
+        <div class="strip-card-inner">Luxury</div>
       </div>
-      <div class="strip-card c4" data-label="Food">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_FOOD.mp4"></video>
+      <div class="strip-card c4" data-label="Aesthetic">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_yebjyb.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Food<br>&amp; Café</div>
+        <div class="strip-card-inner">Aesthetic</div>
       </div>
-      <div class="strip-card c5" data-label="Fashion">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_FASHION.mp4"></video>
+      <div class="strip-card c5" data-label="Travel">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_q4nrfd.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Fashion<br>&amp; Style</div>
+        <div class="strip-card-inner">Travel</div>
       </div>
-      <div class="strip-card c1" data-label="Travel">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_TRAVEL.mp4"></video>
+      <div class="strip-card c1" data-label="Girl Boss">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115235_0012_vdblqm.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Travel<br>&amp; Wander</div>
+        <div class="strip-card-inner">Girl Boss</div>
       </div>
-      <div class="strip-card c2" data-label="Business">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_BUSINESS.mp4"></video>
+      <div class="strip-card c2" data-label="Lifestyle">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_otoyfl.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Business<br>&amp; Work</div>
+        <div class="strip-card-inner">Lifestyle</div>
       </div>
-      <div class="strip-card c3" data-label="Skincare">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_SKINCARE.mp4"></video>
+      <div class="strip-card c3" data-label="Aesthetic">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Skincare<br>&amp; Glow</div>
+        <div class="strip-card-inner">Aesthetic</div>
       </div>
-      <div class="strip-card c4" data-label="Home">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_HOME.mp4"></video>
+      <div class="strip-card c4" data-label="Travel">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_er9jmp.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Home<br>&amp; Interior</div>
+        <div class="strip-card-inner">Travel</div>
       </div>
-      <div class="strip-card c5" data-label="Fitness">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_FITNESS.mp4"></video>
+      <div class="strip-card c5" data-label="Luxury">
+        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_u1hxjz.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-        <div class="strip-card-inner">Fitness<br>&amp; Health</div>
+        <div class="strip-card-inner">Luxury</div>
       </div>
       <!-- Duplicate for loop -->
-      <div class="strip-card c1" data-label="Wellness"><div class="strip-card-inner">Wellness<br>&amp; Beauty</div></div>
-      <div class="strip-card c2" data-label="Nature"><div class="strip-card-inner">Nature<br>&amp; Botanical</div></div>
-      <div class="strip-card c3" data-label="Lifestyle"><div class="strip-card-inner">Luxury<br>Lifestyle</div></div>
-      <div class="strip-card c4" data-label="Food"><div class="strip-card-inner">Food<br>&amp; Café</div></div>
-      <div class="strip-card c5" data-label="Fashion"><div class="strip-card-inner">Fashion<br>&amp; Style</div></div>
-      <div class="strip-card c1" data-label="Travel"><div class="strip-card-inner">Travel<br>&amp; Wander</div></div>
-      <div class="strip-card c2" data-label="Business"><div class="strip-card-inner">Business<br>&amp; Work</div></div>
-      <div class="strip-card c3" data-label="Skincare"><div class="strip-card-inner">Skincare<br>&amp; Glow</div></div>
+      <div class="strip-card c1" data-label="Lifestyle"><div class="strip-card-inner">Lifestyle</div></div>
+      <div class="strip-card c2" data-label="Unisex"><div class="strip-card-inner">Unisex</div></div>
+      <div class="strip-card c3" data-label="Luxury"><div class="strip-card-inner">Luxury</div></div>
+      <div class="strip-card c4" data-label="Aesthetic"><div class="strip-card-inner">Aesthetic</div></div>
+      <div class="strip-card c5" data-label="Travel"><div class="strip-card-inner">Travel</div></div>
+      <div class="strip-card c1" data-label="Girl Boss"><div class="strip-card-inner">Girl Boss</div></div>
+      <div class="strip-card c2" data-label="Lifestyle"><div class="strip-card-inner">Lifestyle</div></div>
+      <div class="strip-card c3" data-label="Aesthetic"><div class="strip-card-inner">Aesthetic</div></div>
+      <div class="strip-card c4" data-label="Travel"><div class="strip-card-inner">Travel</div></div>
+      <div class="strip-card c5" data-label="Luxury"><div class="strip-card-inner">Luxury</div></div>
       <div class="strip-card c4" data-label="Home"><div class="strip-card-inner">Home<br>&amp; Interior</div></div>
       <div class="strip-card c5" data-label="Fitness"><div class="strip-card-inner">Fitness<br>&amp; Health</div></div>
     </div>
@@ -1488,59 +1502,66 @@
         <div class="carousel-track" id="carouselTrack">
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115126_0001_brtkld.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115222_0010_gh0o5s.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #1</div>
+            <div class="carousel-label">Aesthetic</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115135_0003_tibud4.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115130_0002_wvvbcg.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #2</div>
+            <div class="carousel-label">Fashion</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115217_0009_pvo1wv.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_ne1agl.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #3</div>
+            <div class="carousel-label">Girl Boss</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115149_0005_qj63at.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_ojld5k.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #4</div>
+            <div class="carousel-label">Luxury</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_5.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_qtxxft.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #5</div>
+            <div class="carousel-label">Nature</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_6.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_bvgqx4.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #6</div>
+            <div class="carousel-label">Beach</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_7.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_b6awvz.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #7</div>
+            <div class="carousel-label">Romantic</div>
           </div>
 
           <div class="carousel-slide">
-            <video class="carousel-video" loop muted playsinline preload="metadata"
-              src="https://res.cloudinary.com/diyuojas1/video/upload/PASTE_PUBLIC_ID_8.mp4">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_wrgxqf.mp4">
             </video>
-            <div class="carousel-label">Aesthetic #8</div>
+            <div class="carousel-label">Lifestyle</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115156_0006_jsbyr1.mp4">
+            </video>
+            <div class="carousel-label">Art Making</div>
           </div>
 
         </div>
@@ -1550,7 +1571,7 @@
     </div>
 
     <div class="carousel-dots" id="carouselDots"></div>
-    <div class="carousel-counter"><span id="carouselCurrent">1</span> / <span id="carouselTotal">8</span></div>
+    <div class="carousel-counter"><span id="carouselCurrent">1</span> / <span id="carouselTotal">4</span></div>
 
   </div>
 </div>
@@ -1579,14 +1600,14 @@
   }
   .carousel-track {
     display: flex;
-    gap: 14px;
+    gap: 10px;
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
   }
 
   /* Card */
   .carousel-slide {
-    flex: 0 0 calc(20% - 12px);
+    flex: 0 0 calc(33.333% - 10px);
     position: relative;
     background: #D8D5D0;
     overflow: hidden;
@@ -1603,22 +1624,15 @@
     .carousel-play-icon svg { width: 11px; height: 11px; }
   }
   @media (min-width: 601px) and (max-width: 900px) {
-    .carousel-slide { flex: 0 0 calc(20% - 12px); }
+    .carousel-slide { flex: 0 0 calc(33.333% - 10px); }
   }
   @media (min-width: 901px) and (max-width: 1100px) {
-    .carousel-slide { flex: 0 0 calc(20% - 12px); }
+    .carousel-slide { flex: 0 0 calc(33.333% - 10px); }
   }
 
-  /* Placeholder shimmer for empty slots */
+  /* Static placeholder for empty slots — no animation needed */
   .carousel-slide.empty {
-    background: linear-gradient(135deg, #D8D5D0 0%, #C8C4BE 50%, #D8D5D0 100%);
-    background-size: 200% 200%;
-    animation: shimmer 2s ease-in-out infinite;
-  }
-  @keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: #E4E0DA;
   }
 
   .carousel-video {
@@ -1758,7 +1772,7 @@
   const total    = slides.length;
   const dotCount = 4;
 
-  totEl.textContent = total;
+  totEl.textContent = dotCount;
   let current = 0;
 
   const playSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="6,3 20,12 6,21"/></svg>`;
@@ -1790,12 +1804,11 @@
   }
 
   function visibleCount() {
-    if (window.innerWidth <= 600) return 3;
-    return 5;
+    return 3;
   }
 
   function getSlideWidth() {
-    const gap = 14;
+    const gap = 10;
     const wrapW = track.parentElement.offsetWidth;
     const vc = visibleCount();
     return (wrapW - gap * (vc - 1)) / vc;
@@ -1806,11 +1819,11 @@
     const maxIndex = Math.max(0, total - vc);
     current = Math.min(Math.max(index, 0), maxIndex);
     const sw = getSlideWidth();
-    track.style.transform = `translateX(-${current * (sw + 14)}px)`;
+    track.style.transform = `translateX(-${current * (sw + 10)}px)`;
     // Sync dots — map current position to nearest of 4 dots
     const activeDot = maxIndex === 0 ? 0 : Math.round((current / maxIndex) * (dotCount - 1));
     dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === activeDot));
-    curEl.textContent = current + 1;
+    curEl.textContent = activeDot + 1;
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current >= maxIndex;
     pauseAll();
@@ -1873,6 +1886,23 @@
   });
 
   window.addEventListener('resize', () => goTo(current));
+  // Lazy load carousel videos when section scrolls into view
+  const carouselSection = document.querySelector('.carousel-section');
+  if (carouselSection) {
+    const lazyObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        slides.forEach(slide => {
+          const v = slide.querySelector('video');
+          if (v && v.dataset.src && !v.src) {
+            v.src = v.dataset.src;
+          }
+        });
+        lazyObserver.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    lazyObserver.observe(carouselSection);
+  }
+
   goTo(0);
 })();
 </script>
@@ -2121,7 +2151,7 @@
   let spots = parseInt(localStorage.getItem(SPOTS_KEY) || '47');
 
   function updateSpots(n) {
-    document.querySelectorAll('#spots,#spots2,#spots3').forEach(el => el.textContent = n);
+    document.querySelectorAll('#spots,#spots-m,#spots2,#spots3').forEach(el => el.textContent = n);
   }
 
   updateSpots(spots);
