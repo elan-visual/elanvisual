@@ -237,12 +237,11 @@
     will-change: transform;
     contain: layout style;
   }
-  .strip-track:hover { animation-play-state: paused; }
   .strip-card {
     width: 200px;
     height: 280px;
-    background: #F0EEEB;
-    border: 1px solid var(--border);
+    background: transparent;
+    border: none;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -326,12 +325,8 @@
   /* Hide text label when video is loaded */
   .strip-card.has-video .strip-card-inner { display: none; }
 
-  /* category colors */
-  .c1 { background: linear-gradient(145deg, #EAF8FB 0%, #D4EFF4 100%); }
-  .c2 { background: linear-gradient(145deg, #F3FAD0 0%, #E8F5B8 100%); }
-  .c3 { background: linear-gradient(145deg, #D6F1F7 0%, #C4EAF2 100%); }
-  .c4 { background: linear-gradient(145deg, #F0FAC8 0%, #E4F5B0 100%); }
-  .c5 { background: linear-gradient(145deg, #E8F7FA 0%, #D0ECF3 100%); }
+  /* category colors — transparent so only video shows */
+  .c1, .c2, .c3, .c4, .c5 { background: transparent; }
 
   @keyframes scrollLeft {
     0% { transform: translateX(0); }
@@ -2217,53 +2212,72 @@
     });
   });
 
-  // ── CATEGORY STRIP — click to play with sound ──
+  // ── CATEGORY STRIP — click opens lightbox ──
+  // Create modal
+  const modal = document.createElement('div');
+  modal.id = 'strip-modal';
+  modal.style.cssText = `
+    display:none; position:fixed; inset:0; z-index:9999;
+    background:rgba(0,0,0,0.92);
+    align-items:center; justify-content:center; flex-direction:column;
+  `;
+  modal.innerHTML = `
+    <button id="strip-modal-close" style="
+      position:absolute; top:20px; right:24px;
+      background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+      color:#fff; font-size:24px; width:44px; height:44px;
+      border-radius:50%; cursor:pointer; display:flex;
+      align-items:center; justify-content:center; z-index:2;
+      font-family:sans-serif; line-height:1;
+    ">✕</button>
+    <div id="strip-modal-label" style="
+      color:#DDED8C; font-size:11px; letter-spacing:0.18em;
+      text-transform:uppercase; font-family:'DM Sans',sans-serif;
+      font-weight:600; margin-bottom:16px;
+    "></div>
+    <video id="strip-modal-video" playsinline style="
+      max-height:80vh; max-width:90vw;
+      aspect-ratio:9/16; object-fit:contain;
+      background:#000;
+    "></video>
+  `;
+  document.body.appendChild(modal);
+
+  const modalVideo = document.getElementById('strip-modal-video');
+  const modalClose = document.getElementById('strip-modal-close');
+  const modalLabel = document.getElementById('strip-modal-label');
+
+  function openModal(src, label) {
+    modalVideo.src = src;
+    modalVideo.muted = false;
+    modalVideo.loop = true;
+    modalLabel.textContent = label;
+    modal.style.display = 'flex';
+    modalVideo.play().catch(() => {
+      modalVideo.muted = true;
+      modalVideo.play().catch(() => {});
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalVideo.pause();
+    modalVideo.src = '';
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // Attach click to all strip cards
   document.querySelectorAll('.strip-card').forEach(card => {
     const video = card.querySelector('video');
-    const btn   = card.querySelector('.strip-play-btn');
-    if (!video) return;
-
-    const playSVG  = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="6,3 20,12 6,21"/></svg>`;
-    const pauseSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
-
-    // Load src from data-src on first interaction
-    const loadSrc = () => {
-      if (video.dataset.src && !video.src) {
-        video.src = video.dataset.src;
-        card.classList.add('has-video');
-      }
-    };
+    if (!video || !video.dataset.src) return;
 
     card.addEventListener('click', () => {
-      if (!video.dataset.src && !video.src) return;
-
-      loadSrc();
-
-      if (video.paused) {
-        // Pause + mute all other playing strip videos
-        document.querySelectorAll('.strip-card.playing').forEach(c => {
-          const v = c.querySelector('video');
-          const b = c.querySelector('.strip-play-btn');
-          if (v) { v.pause(); v.muted = true; }
-          if (b) b.innerHTML = playSVG;
-          c.classList.remove('playing');
-        });
-        // Play with sound
-        video.muted = false;
-        video.volume = 1;
-        video.play().catch(() => {
-          // Autoplay with sound blocked — try muted fallback
-          video.muted = true;
-          video.play().catch(() => {});
-        });
-        card.classList.add('playing', 'has-video');
-        if (btn) btn.innerHTML = pauseSVG;
-      } else {
-        video.pause();
-        video.muted = true;
-        card.classList.remove('playing');
-        if (btn) btn.innerHTML = playSVG;
-      }
+      openModal(video.dataset.src, card.getAttribute('data-label'));
     });
   });
 </script>
