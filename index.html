@@ -279,33 +279,36 @@
     z-index: 1;
     display: block;
   }
-  /* Play button overlay */
+  /* Play button overlay — only show on hover, no dark bg */
   .strip-play-btn {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 44px; height: 44px;
-    background: rgba(80,80,80,0.72);
+    background: rgba(255,255,255,0.85);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 4;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, opacity 0.2s;
     pointer-events: none;
+    opacity: 0;
   }
   .strip-play-btn svg {
     width: 16px; height: 16px;
-    fill: #fff;
+    fill: #0A0A0A;
     margin-left: 3px;
   }
   .strip-card:hover .strip-play-btn {
-    background: rgba(82,197,216,0.88);
-    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
   }
   .strip-card.playing .strip-play-btn {
-    background: rgba(82,197,216,0.88);
+    opacity: 1;
+    background: rgba(82,197,216,0.9);
   }
+  .strip-card.playing .strip-play-btn svg { fill: #fff; }
   .strip-card-inner {
     width: 100%; height: 100%;
     display: flex;
@@ -1260,52 +1263,52 @@
     <div class="strip-track" id="stripTrack">
       <!-- Cards -->
       <div class="strip-card c1" data-label="Lifestyle">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Lifestyle</div>
       </div>
       <div class="strip-card c2" data-label="Unisex">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_UNISEX_LUXURY_300_fava6j.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_UNISEX_LUXURY_300_fava6j.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Unisex</div>
       </div>
       <div class="strip-card c3" data-label="Luxury">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_bvfovm.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_bvfovm.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Luxury</div>
       </div>
       <div class="strip-card c4" data-label="Aesthetic">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_yebjyb.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_yebjyb.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Aesthetic</div>
       </div>
       <div class="strip-card c5" data-label="Travel">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_q4nrfd.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_q4nrfd.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Travel</div>
       </div>
       <div class="strip-card c1" data-label="Girl Boss">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115235_0012_vdblqm.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115235_0012_vdblqm.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Girl Boss</div>
       </div>
       <div class="strip-card c2" data-label="Lifestyle">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_otoyfl.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_otoyfl.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Lifestyle</div>
       </div>
       <div class="strip-card c3" data-label="Aesthetic">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Aesthetic</div>
       </div>
       <div class="strip-card c4" data-label="Travel">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_er9jmp.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_er9jmp.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Travel</div>
       </div>
       <div class="strip-card c5" data-label="Luxury">
-        <video loop muted playsinline preload="none" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_u1hxjz.mp4"></video>
+        <video loop playsinline preload="metadata" data-src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_u1hxjz.mp4"></video>
         <div class="strip-play-btn"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
         <div class="strip-card-inner">Luxury</div>
       </div>
@@ -2214,7 +2217,7 @@
     });
   });
 
-  // ── CATEGORY STRIP — click to play ──
+  // ── CATEGORY STRIP — click to play with sound ──
   document.querySelectorAll('.strip-card').forEach(card => {
     const video = card.querySelector('video');
     const btn   = card.querySelector('.strip-play-btn');
@@ -2223,36 +2226,45 @@
     const playSVG  = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="6,3 20,12 6,21"/></svg>`;
     const pauseSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
 
+    // Load src from data-src on first interaction
+    const loadSrc = () => {
+      if (video.dataset.src && !video.src) {
+        video.src = video.dataset.src;
+        card.classList.add('has-video');
+      }
+    };
+
     card.addEventListener('click', () => {
-      // Skip placeholder cards
-      if (!video.src || video.src.includes('PASTE_PUBLIC_ID')) return;
+      if (!video.dataset.src && !video.src) return;
+
+      loadSrc();
 
       if (video.paused) {
-        // Pause all other strip videos first
+        // Pause + mute all other playing strip videos
         document.querySelectorAll('.strip-card.playing').forEach(c => {
           const v = c.querySelector('video');
           const b = c.querySelector('.strip-play-btn');
-          if (v) v.pause();
+          if (v) { v.pause(); v.muted = true; }
           if (b) b.innerHTML = playSVG;
           c.classList.remove('playing');
         });
-        video.play().catch(() => {});
+        // Play with sound
+        video.muted = false;
+        video.volume = 1;
+        video.play().catch(() => {
+          // Autoplay with sound blocked — try muted fallback
+          video.muted = true;
+          video.play().catch(() => {});
+        });
         card.classList.add('playing', 'has-video');
         if (btn) btn.innerHTML = pauseSVG;
       } else {
         video.pause();
+        video.muted = true;
         card.classList.remove('playing');
         if (btn) btn.innerHTML = playSVG;
       }
     });
-
-    // Lazy-load src on first click
-    card.addEventListener('click', () => {
-      if (!video.src && video.dataset.src) {
-        video.src = video.dataset.src;
-        card.classList.add('has-video');
-      }
-    }, { once: true });
   });
 </script>
 </body>
