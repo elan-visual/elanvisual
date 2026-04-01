@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="5,000+ faceless aesthetic stock videos for Instagram Reels & TikTok. One-time $37. Lifetime access.">
+<title>Elan Visual — 5000+ Faceless Aesthetic Stock Videos</title>
+
+<!-- Payhip -->
+<script src="https://payhip.com/payhip.js"></script>
+
+<!-- Preconnect for faster font load -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Load fonts async — non-blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+<style>
+  :root {
+    --electric: #52C5D8;
+    --lime: #DDED8C;
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --bg: #FFFFFF;
+    --text: #1A1A1A;
+    --text-muted: #666666;
+    --border: rgba(0,0,0,0.1);
+    --bg-soft: #F7F5F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* ── STICKY TOP BAR ── */
+  .top-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--electric);
+    color: #0A0A0A;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .top-bar strong { font-weight: 600; }
+  .tb-short { display: none; }
+  @media (max-width: 600px) {
+    .tb-full { display: none; }
+    .tb-short { display: inline; }
+    .top-bar { font-size: 12px; gap: 6px; padding: 10px 12px; }
+  }
+  #countdown {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(0,0,0,0.15);
+    padding: 2px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,0,0,0.02) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,0,0,0.015) 0%, transparent 60%);
+  }
+
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 860px;
+    padding: 0 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--electric);
+  }
+
+  .hero-sub {
+    margin-top: 24px;
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: rgba(30,30,30,0.6);
+    max-width: 520px;
+    line-height: 1.7;
+    padding: 0 24px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+
+  .hero-cta-wrap {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--lime);
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.08);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(221,237,140,0.5); }
+
+  .price-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(30,30,30,0.6);
+  }
+  .price-badge s { color: rgba(30,30,30,0.35); }
+  .price-badge strong { color: var(--electric); font-size: 22px; }
+
+  .trust-row {
+    margin-top: 60px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: #0A0A0A;
+    line-height: 1;
+  }
+  .trust-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .trust-div { width: 1px; background: var(--border); align-self: stretch; }
+
+  /* ── VIDEO PREVIEW STRIP ── */
+  .preview-strip {
+    padding: 80px 0 60px;
+    overflow: hidden;
+    position: relative;
+  }
+  .strip-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .strip-track {
+    display: flex;
+    gap: 16px;
+    animation: scrollLeft 32s linear infinite;
+    width: max-content;
+    will-change: transform;
+    contain: layout style;
+  }
+  .strip-card {
+    width: 200px;
+    height: 280px;
+    background: transparent;
+    border: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  /* Category label — bottom pill */
+  .strip-card::before {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #DDED8C;
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  /* Video inside card */
+  .strip-card video {
+    position: absolute;
+    inset: 0;
+/* ── UPDATED VIDEO PREVIEW CAROUSEL ── */
+.preview-strip {
+  padding: 80px 24px 60px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.strip-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
+  padding: 10px 0;
+}
+
+.strip-track::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.strip-card {
+  width: 240px;
+  height: 340px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+
+.strip-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Category Label */
+.strip-card::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--lime);
+  color: var(--black);
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Play Button - Clean, no overlay */
+.strip-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.strip-play-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--black);
+  margin-left: 3px;
+}
+
+.strip-card.playing .strip-play-btn {
+  background: var(--electric);
+}
+
+.strip-card.playing .strip-play-btn svg {
+  fill: #fff;
+  margin-left: 0; /* Center the pause icon */
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-arrow:hover {
+  background: var(--bg-soft);
+  border-color: var(--electric);
+}
+
+.nav-arrow.prev { left: -22px; }
+.nav-arrow.next { right: -22px; }
+
+@media (max-width: 768px) {
+  .nav-arrow { display: none; } /* Hide arrows on mobile for touch scrolling */
+  .preview-strip { padding: 40px 16px; }
+  .strip-card { width: 180px; height: 260px; }
+}
+
+  /* ── PERFORMANCE: skip rendering off-screen sections ── */
+  .proof-section,
+  .compare-section,
+  .faq-section,
+  .carousel-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
+  }
+
+  /* ── PAIN POINTS ── */
+  .section { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+    border: 1px solid rgba(82,197,216,0.35);
+    padding: 6px 16px;
+    margin-bottom: 40px;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .pain-card {
+    background: #F7F5F2;
+    padding: 36px 32px;
+    display: flex;
+    gap: 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .pain-card:hover { border-color: var(--border); }
+
+  .pain-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .pain-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .pain-card p {
+    font-size: 14px;
+    color: rgba(30,30,30,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── SOLUTION ── */
+  .solution-wrap {
+    background: #F7F5F2;
+    padding: 100px 24px;
+  }
+
+  .solution-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .solution-visual {
+    position: relative;
+    height: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-4px); }
+
+  .stat-card.s1 { background: #0A0A0A; }
+  .stat-card.s2 { background: #52C5D8; }
+  .stat-card.s3 { background: #DDED8C; }
+  .stat-card.s4 { background: #F7F5F2; border: 1px solid rgba(0,0,0,0.08); }
+
+  /* Big decorative number in background */
+  .stat-bg-num {
+    position: absolute;
+    top: -10px; right: -8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100px;
+    font-weight: 300;
+    line-height: 1;
+    opacity: 0.07;
+    pointer-events: none;
+    user-select: none;
+  }
+  .stat-card.s1 .stat-bg-num { color: #fff; opacity: 0.08; }
+  .stat-card.s2 .stat-bg-num { color: #0A0A0A; opacity: 0.1; }
+  .stat-card.s3 .stat-bg-num { color: #0A0A0A; opacity: 0.1; }
+  .stat-card.s4 .stat-bg-num { color: #52C5D8; opacity: 0.15; }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 6px;
+  }
+  .stat-card.s1 .stat-label { color: rgba(255,255,255,0.5); }
+  .stat-card.s2 .stat-label { color: rgba(10,10,10,0.55); }
+  .stat-card.s3 .stat-label { color: rgba(10,10,10,0.55); }
+  .stat-card.s4 .stat-label { color: rgba(10,10,10,0.45); }
+
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1;
+  }
+  .stat-card.s1 .stat-value { color: #52C5D8; }
+  .stat-card.s2 .stat-value { color: #0A0A0A; }
+  .stat-card.s3 .stat-value { color: #0A0A0A; }
+  .stat-card.s4 .stat-value { color: #0A0A0A; }
+
+  .stat-desc {
+    font-size: 12px;
+    margin-top: 6px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .stat-card.s1 .stat-desc { color: rgba(255,255,255,0.55); }
+  .stat-card.s2 .stat-desc { color: rgba(10,10,10,0.6); }
+  .stat-card.s3 .stat-desc { color: rgba(10,10,10,0.6); }
+  .stat-card.s4 .stat-desc { color: rgba(10,10,10,0.5); }
+
+  /* Animated counter */
+  .stat-value[data-target] { transition: none; }
+
+  .solution-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .solution-text h2 em { font-style: italic; color: var(--electric); }
+
+  .solution-text p {
+    font-size: 15px;
+    color: rgba(30,30,30,0.6);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    color: rgba(30,30,30,0.75);
+    line-height: 1.5;
+  }
+
+  .check-list li::before {
+    content: '✦';
+    color: var(--electric);
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-section {
+    padding: 100px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-heading em { font-style: italic; color: var(--electric); }
+
+  .section-sub {
+    font-size: 15px;
+    color: rgba(30,30,30,0.5);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 60px;
+    line-height: 1.7;
+  }
+
+  /* Bento grid */
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .inside-card {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 28px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .inside-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    z-index: 2;
+  }
+
+  /* Grid placement — bento layout */
+  .inside-card:nth-child(1) { grid-column: span 2; background: #0A0A0A; }
+  .inside-card:nth-child(2) { grid-column: span 2; background: #52C5D8; }
+  .inside-card:nth-child(3) { grid-column: span 2; background: #F7F5F2; border: 1px solid rgba(0,0,0,0.07); }
+  .inside-card:nth-child(4) { grid-column: span 3; background: #DDED8C; }
+  .inside-card:nth-child(5) { grid-column: span 3; background: #F7F5F2; border: 1px solid rgba(0,0,0,0.07); }
+  .inside-card:nth-child(6) { grid-column: span 6; background: #0A0A0A; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+
+  /* Card icon */
+  .inside-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+  }
+  .inside-card:nth-child(6) .inside-icon { margin-bottom: 0; font-size: 40px; flex-shrink: 0; }
+
+  /* Card title */
+  .inside-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .inside-card:nth-child(1) h3 { color: #fff; }
+  .inside-card:nth-child(2) h3 { color: #0A0A0A; }
+  .inside-card:nth-child(3) h3 { color: #0A0A0A; }
+  .inside-card:nth-child(4) h3 { color: #0A0A0A; }
+  .inside-card:nth-child(5) h3 { color: #0A0A0A; }
+  .inside-card:nth-child(6) h3 { color: #DDED8C; font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 4px; }
+
+  /* Card description */
+  .inside-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .inside-card:nth-child(1) p { color: rgba(255,255,255,0.5); }
+  .inside-card:nth-child(2) p { color: rgba(10,10,10,0.6); }
+  .inside-card:nth-child(3) p { color: rgba(10,10,10,0.5); }
+  .inside-card:nth-child(4) p { color: rgba(10,10,10,0.6); }
+  .inside-card:nth-child(5) p { color: rgba(10,10,10,0.5); }
+  .inside-card:nth-child(6) p { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+  /* Pill tag on cards */
+  .inside-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .inside-card:nth-child(1) .inside-tag { background: rgba(82,197,216,0.2); color: #52C5D8; }
+  .inside-card:nth-child(2) .inside-tag { background: rgba(10,10,10,0.12); color: #0A0A0A; }
+  .inside-card:nth-child(3) .inside-tag { background: rgba(82,197,216,0.1); color: #2AABBC; }
+  .inside-card:nth-child(4) .inside-tag { background: rgba(10,10,10,0.1); color: #0A0A0A; }
+  .inside-card:nth-child(5) .inside-tag { background: rgba(82,197,216,0.1); color: #2AABBC; }
+  .inside-card:nth-child(6) .inside-tag { background: rgba(221,237,140,0.15); color: #DDED8C; margin-bottom: 8px; }
+
+  /* Big decorative bg text */
+  .inside-bg-text {
+    position: absolute;
+    bottom: -10px; right: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.06;
+  }
+  .inside-card:nth-child(1) .inside-bg-text { color: #fff; opacity: 0.08; }
+  .inside-card:nth-child(4) .inside-bg-text { color: #0A0A0A; }
+
+  /* Card 6 text block */
+  .inside-card-6-text { flex: 1; min-width: 200px; }
+  .inside-card-6-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .inside-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .inside-pill:hover { background: rgba(221,237,140,0.15); color: #DDED8C; border-color: rgba(221,237,140,0.3); }
+
+  @media (max-width: 768px) {
+    .inside-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .inside-card:nth-child(1),
+    .inside-card:nth-child(2),
+    .inside-card:nth-child(3),
+    .inside-card:nth-child(4),
+    .inside-card:nth-child(5),
+    .inside-card:nth-child(6) {
+      grid-column: span 1;
+    }
+    .inside-card:nth-child(6) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .inside-card-6-pills {
+      width: 100%;
+    }
+    .inside-pill {
+      white-space: normal;
+    }
+    .inside-icon { font-size: 24px; margin-bottom: 12px; }
+    .inside-card h3 { font-size: 20px; }
+    .inside-bg-text { font-size: 60px; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .inside-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .inside-card:nth-child(1),
+    .inside-card:nth-child(2),
+    .inside-card:nth-child(3),
+    .inside-card:nth-child(4),
+    .inside-card:nth-child(5) {
+      grid-column: span 1;
+    }
+    .inside-card:nth-child(6) {
+      grid-column: span 2;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .inside-card-6-pills { width: 100%; }
+  }
+
+  /* ── SOCIAL PROOF ── */
+  .proof-section {
+    background: #F6FBDF;
+    padding: 100px 24px;
+  }
+
+  .proof-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .proof-card {
+    background: #FFFFFF;
+    padding: 36px 32px;
+    border-top: 2px solid var(--electric);
+  }
+
+  .stars {
+    color: var(--electric);
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .proof-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(10,10,10,0.85);
+    margin-bottom: 24px;
+  }
+
+  .proof-author {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .proof-author span {
+    color: var(--electric);
+    margin-left: 8px;
+  }
+
+  /* ── COMPARISON ── */
+  .compare-section {
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .compare-table {
+    margin-top: 60px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .compare-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    background: #0A0A0A;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-header div {
+    padding: 16px 24px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .compare-header div:first-child { text-align: left; color: rgba(255,255,255,0.45); }
+  .compare-header div:last-child { background: rgba(221,237,140,0.2); color: var(--lime); }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .compare-row:last-child { border-bottom: none; }
+
+  .compare-row div {
+    padding: 18px 24px;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(10,10,10,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .compare-row div:first-child {
+    text-align: left;
+    justify-content: flex-start;
+    color: rgba(10,10,10,0.8);
+  }
+  .compare-row div:last-child {
+    background: rgba(221,237,140,0.12);
+  }
+
+  .yes { color: var(--electric) !important; font-size: 18px; }
+  .no { color: rgba(200,60,60,0.7) !important; font-size: 18px; }
+  .cost { font-weight: 600; color: rgba(200,60,60,0.8) !important; font-size: 13px !important; }
+  .cost-ok { font-weight: 600; color: var(--electric) !important; font-size: 13px !important; }
+
+  /* ── URGENCY / CTA ── */
+  .cta-section {
+    position: relative;
+    padding: 120px 24px;
+    text-align: center;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(82,197,216,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .urgency-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(82,197,216,0.12);
+    border: 1px solid rgba(82,197,216,0.5);
+    color: #2AABBC;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .pulse-dot {
+    width: 7px; height: 7px;
+    background: var(--electric);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    max-width: 700px;
+    margin: 0 auto 24px;
+  }
+
+  .cta-section h2 em { font-style: italic; color: var(--electric); }
+
+  .cta-section p {
+    font-size: 15px;
+    color: rgba(10,10,10,0.55);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .offer-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #0A0A0A;
+    border: 1px solid rgba(82,197,216,0.3);
+    padding: 48px 64px;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .offer-price {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .offer-price s {
+    font-size: 20px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 8px;
+    text-decoration: line-through;
+  }
+
+  .offer-price .big-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--lime);
+    line-height: 1;
+  }
+
+  .offer-price .sup { font-size: 28px; margin-top: 12px; color: var(--lime); }
+
+  .offer-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .offer-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .offer-features li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .offer-features li span {
+    color: var(--electric);
+    font-size: 12px;
+  }
+
+  .offer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .spots-left {
+    font-size: 12px;
+    color: #FFFFFF !important;
+    letter-spacing: 0.08em;
+  }
+  .spots-left strong {
+    color: #FFFFFF !important;
+  }
+
+  /* ── OFFER COUNTDOWN ── */
+  .offer-countdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .offer-countdown-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .offer-countdown-blocks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cd-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(82,197,216,0.2);
+    padding: 14px 20px;
+    min-width: 72px;
+  }
+  .cd-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: #DDED8C;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    transition: color 0.3s;
+  }
+  .cd-num.flash { color: #52C5D8; }
+  .cd-unit {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .cd-sep {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 18px;
+  }
+
+  .guarantee {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(10,10,10,0.4);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    padding: 100px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .faq-q {
+    padding: 24px 0;
+    font-size: 16px;
+    color: rgba(10,10,10,0.85);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .faq-q:hover { color: var(--electric); }
+
+  .faq-icon {
+    color: var(--electric);
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 14px;
+    color: rgba(10,10,10,0.5);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 24px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(10,10,10,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--electric); }
+
+  /* ── FLOATING CTA ── */
+  .float-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 99;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s;
+    pointer-events: none;
+  }
+
+  .float-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .float-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--lime);
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 28px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(221,237,140,0.5);
+    transition: all 0.25s;
+  }
+
+  .float-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(221,237,140,0.6);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .solution-inner { grid-template-columns: 1fr; gap: 60px; }
+    .solution-visual { height: 320px; }
+    .inside-grid { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .compare-table { font-size: 13px; }
+    .compare-row div, .compare-header div { padding: 14px 16px; }
+    .offer-box { padding: 36px 28px; }
+    .float-cta { bottom: 16px; right: 16px; }
+    .trust-div { display: none; }
+    .trust-row { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP URGENCY BAR -->
+<div class="top-bar">
+  ⚡ <span class="tb-full">Limited Launch Offer — Only <strong id="spots">47</strong> spots left at this price.&nbsp; Ends in:</span><span class="tb-short">Only <strong id="spots-m">47</strong> left —</span> <span id="countdown">00:00:00</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <p class="hero-eyebrow">Elan Visual — Premium Stock Video Pack</p>
+
+  <h1>
+    Stop Wasting Time.<br>
+    Post <em>Aesthetic Content</em><br>
+    In 60 Seconds.
+  </h1>
+
+  <p class="hero-sub">
+    5,000+ faceless aesthetic stock videos. Ready for Instagram, TikTok & Reels. 
+    No camera. No editing skills. No agency. Just pick, caption, post.
+  </p>
+
+  <div class="hero-cta-wrap">
+    <div class="price-badge">
+      <s>$97</s>
+      <strong>$37</strong>
+      <span>— one-time · lifetime access</span>
+    </div>
+    <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="btn-primary payhip-buy-btn">
+      Get Instant Access — $37
+      <span>→</span>
+    </a>
+    <p style="font-size:12px;color:rgba(10,10,10,0.4);letter-spacing:0.08em;">ONE-TIME PAYMENT · NO SUBSCRIPTION · YOURS FOREVER</p>
+  </div>
+
+  <div class="hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/KfBP6gYr2zk?rel=0&modestbranding=1"
+      title="Elan Visual Preview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
+  <div class="trust-row">
+    <div class="trust-item">
+      <span class="trust-num">5,000+</span>
+      <span class="trust-label">Aesthetic Videos</span>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <span class="trust-num">60s</span>
+      <span class="trust-label">Content In Minutes</span>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <span class="trust-num">∞</span>
+      <span class="trust-label">Lifetime Access</span>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-item">
+      <span class="trust-num">4.9★</span>
+      <span class="trust-label">Customer Rating</span>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO PREVIEW STRIP -->
+<div class="preview-strip">
+<section class="preview-strip">
+  <div class="strip-label">Explore the Categories</div>
+  
+  <div class="carousel-container">
+    <button class="nav-arrow prev" onclick="moveCarousel(-1)">←</button>
+    
+    <div class="strip-track" id="categoryTrack">
+      <div class="strip-card" data-label="Travel & Nature">
+        <video muted playsinline loop data-src="VIDEO_URL_1"></video>
+      </div>
+      <div class="strip-card" data-label="Minimal Interiors">
+        <video muted playsinline loop data-src="VIDEO_URL_2"></video>
+      </div>
+      <div class="strip-card" data-label="Self-Care">
+        <video muted playsinline loop data-src="VIDEO_URL_3"></video>
+      </div>
+      <div class="strip-card" data-label="Urban Lifestyle">
+        <video muted playsinline loop data-src="VIDEO_URL_4"></video>
+      </div>
+      <div class="strip-card" data-label="Productivity">
+        <video muted playsinline loop data-src="VIDEO_URL_5"></video>
+      </div>
+    </div>
+
+    <button class="nav-arrow next" onclick="moveCarousel(1)">→</button>
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('categoryTrack');
+  const playSVG = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
+  const pauseSVG = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
+
+  // Initialize Play Buttons
+  document.querySelectorAll('.strip-card').forEach(card => {
+    const video = card.querySelector('video');
+    const btn = document.createElement('div');
+    btn.className = 'strip-play-btn';
+    btn.innerHTML = playSVG;
+    card.appendChild(btn);
+
+    card.addEventListener('click', () => {
+      // Lazy load video source on click
+      if (!video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+      }
+
+      if (video.paused) {
+        // Stop any other playing videos
+        document.querySelectorAll('.strip-card.playing').forEach(otherCard => {
+          const v = otherCard.querySelector('video');
+          const b = otherCard.querySelector('.strip-play-btn');
+          v.pause();
+          v.muted = true;
+          b.innerHTML = playSVG;
+          otherCard.classList.remove('playing');
+        });
+
+        // Play current video with sound
+        video.muted = false;
+        video.play();
+        card.classList.add('playing');
+        btn.innerHTML = pauseSVG;
+      } else {
+        video.pause();
+        video.muted = true;
+        card.classList.remove('playing');
+        btn.innerHTML = playSVG;
+      }
+    });
+  });
+});
+</script>
+// Arrow Navigation Function
+function moveCarousel(direction) {
+  const track = document.getElementById('categoryTrack');
+  const scrollAmount = 300; // Adjust based on card width
+  track.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+<!-- PAIN POINTS -->
+<div class="section reveal">
+  <div class="section-tag">The Real Problem</div>
+  <h2 class="section-heading">You know you need to post.<br>But <em>content creation</em> is killing you.</h2>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">💸</div>
+      <div>
+        <h3>Agencies cost a fortune</h3>
+        <p>$500–$2,000/month for content you don't fully own, in a style that's "close enough" to what you want. And you still have to brief them every single time.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">⏳</div>
+      <div>
+        <h3>Filming takes hours</h3>
+        <p>Setup, shoot, edit, re-edit, export, resize for each platform. Hours gone. And the algorithm wants you back tomorrow. And the day after.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😰</div>
+      <div>
+        <h3>Showing your face feels uncomfortable</h3>
+        <p>Not everyone wants to be on camera — and that's completely valid. But your content still needs to look premium and professional to convert.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📉</div>
+      <div>
+        <h3>Inconsistency kills your reach</h3>
+        <p>You post when you have time. Then you go quiet for a week. The algorithm punishes you. Your audience forgets you. The cycle restarts.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<div class="solution-wrap reveal">
+  <div class="solution-inner">
+    <div class="solution-visual">
+
+      <!-- Card 1 — Black / 5000+ -->
+      <div class="stat-card s1">
+        <div class="stat-bg-num">5K</div>
+        <div class="stat-label">Stock Videos</div>
+        <div class="stat-value" data-target="5000" data-suffix="+">5,000+</div>
+        <div class="stat-desc">Faceless aesthetic videos across 10+ niches</div>
+      </div>
+
+      <!-- Card 2 — Electric Blue / 60s -->
+      <div class="stat-card s2">
+        <div class="stat-bg-num">60</div>
+        <div class="stat-label">Time to post</div>
+        <div class="stat-value">60s</div>
+        <div class="stat-desc">From your library to your feed in under a minute</div>
+      </div>
+
+      <!-- Card 3 — Lime / Rating -->
+      <div class="stat-card s3">
+        <div class="stat-bg-num">4.9</div>
+        <div class="stat-label">Customer rating</div>
+        <div class="stat-value">4.9 ★</div>
+        <div class="stat-desc">Loved by creators, brands & freelancers</div>
+      </div>
+
+      <!-- Card 4 — Light / Lifetime -->
+      <div class="stat-card s4">
+        <div class="stat-bg-num">∞</div>
+        <div class="stat-label">Access</div>
+        <div class="stat-value">Forever</div>
+        <div class="stat-desc">Pay once — use for life, no subscription ever</div>
+      </div>
+
+    </div>
+
+    <div class="solution-text">
+      <div class="section-tag">The Solution</div>
+      <h2>Elan Visual gives you a <em>content library</em> that works while you don't.</h2>
+      <p>A done-for-you vault of 5,000+ cinematic, faceless stock videos — sorted by category, ready to drop into Canva, CapCut, or Premiere. Pick a video. Add your text. Post.</p>
+      <ul class="check-list">
+        <li>5,000+ premium faceless videos across 10+ categories</li>
+        <li>9:16 vertical format — Instagram Reels & TikTok ready</li>
+        <li>Works with Canva, CapCut, Premiere & any editor</li>
+        <li>Commercial license included — use for clients too</li>
+        <li>Instant download — no waiting, no shipping</li>
+        <li>One payment, lifetime access, forever yours</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<div class="inside-section reveal">
+  <div class="section-tag">What's Inside</div>
+  <h2 class="section-heading">6 categories. Every niche. <em>All yours.</em></h2>
+  <p class="section-sub">Each category is curated for a specific audience and purpose — so your content always feels intentional, not random.</p>
+
+  <div class="inside-grid">
+
+    <!-- Card 1 — Black -->
+    <div class="inside-card">
+      <div class="inside-bg-text">✦</div>
+      <span class="inside-icon">🥂</span>
+      <span class="inside-tag">Most Popular</span>
+      <h3>Lifestyle</h3>
+      <p>Food & café scenes, OOTD moments, birthday celebrations. Perfect for F&B brands, fashion pages, and lifestyle creators who need relatable, everyday content that feels aspirational — just add your caption and post.</p>
+    </div>
+
+    <!-- Card 2 — Electric Blue -->
+    <div class="inside-card">
+      <span class="inside-icon">🏎️</span>
+      <span class="inside-tag">High-Demand</span>
+      <h3>Unisex Wealth</h3>
+      <p>Supercars, jet-set travel, and men's wealth aesthetic clips. Built for finance brands, business coaches, and motivational creators who want to position their content around success — and attract an audience that aspires to level up.</p>
+    </div>
+
+    <!-- Card 3 — Light -->
+    <div class="inside-card">
+      <span class="inside-icon">👜</span>
+      <span class="inside-tag">Premium</span>
+      <h3>Luxury</h3>
+      <p>Designer bags, boutiques, luxury homes, high-end cars, and money aesthetics. Use these to instantly elevate the perceived value of your brand — ideal for high-ticket offers, premium services, and fashion sellers who want every post to feel expensive.</p>
+    </div>
+
+    <!-- Card 4 — Lime (wider) -->
+    <div class="inside-card">
+      <div class="inside-bg-text">◈</div>
+      <span class="inside-icon">🕯️</span>
+      <span class="inside-tag">Evergreen</span>
+      <h3>Aesthetic</h3>
+      <p>Manicures, cozy cafés, reading corners, home interiors, and soft living moments. The most saved and shared content style on Instagram — perfect for building a warm, cohesive feed that keeps followers coming back and turns casual scrollers into loyal buyers.</p>
+    </div>
+
+    <!-- Card 5 — Light (wider) -->
+    <div class="inside-card">
+      <span class="inside-icon">✈️</span>
+      <span class="inside-tag">Aspirational</span>
+      <h3>Travel</h3>
+      <p>Luxury hotels, private villas, private jets, tropical beaches, Japan streets, and mountain escapes. Ideal for travel agencies, tourism brands, and lifestyle creators who want to sell a feeling — not just a destination. No travel budget needed.</p>
+    </div>
+
+    <!-- Card 6 — Full width black -->
+    <div class="inside-card">
+      <span class="inside-icon">👩‍💼</span>
+      <div class="inside-card-6-text">
+        <span class="inside-tag">Fan Favourite</span>
+        <h3>Girl Boss</h3>
+        <p>Confident, independent women — working on laptops, running meetings, dressed in high-end fashion, and owning every room. Built for female entrepreneurs, business coaches, and personal brands targeting ambitious women. This is the content that makes your audience stop, feel seen, and take action.</p>
+      </div>
+      <div class="inside-card-6-pills">
+        <span class="inside-pill">💻 Boss at Work</span>
+        <span class="inside-pill">👠 High-End Fashion</span>
+        <span class="inside-pill">📱 Managing Business</span>
+        <span class="inside-pill">🔥 Independent Energy</span>
+        <span class="inside-pill">💅 Busy & Thriving</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- VIDEO CAROUSEL -->
+<div class="carousel-section reveal">
+  <div class="carousel-inner">
+    <div class="section-tag">See It In Action</div>
+    <h2 class="section-heading">Real videos from <em>your pack</em>.</h2>
+    <p class="section-sub">Swipe through actual stock videos included in your library. Pick, caption, post.</p>
+
+    <div class="carousel-stage">
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">&#8592;</button>
+
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115222_0010_gh0o5s.mp4">
+            </video>
+            <div class="carousel-label">Aesthetic</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115130_0002_wvvbcg.mp4">
+            </video>
+            <div class="carousel-label">Fashion</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_ne1agl.mp4">
+            </video>
+            <div class="carousel-label">Girl Boss</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_ojld5k.mp4">
+            </video>
+            <div class="carousel-label">Luxury</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_qtxxft.mp4">
+            </video>
+            <div class="carousel-label">Nature</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_bvgqx4.mp4">
+            </video>
+            <div class="carousel-label">Beach</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_b6awvz.mp4">
+            </video>
+            <div class="carousel-label">Romantic</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_wrgxqf.mp4">
+            </video>
+            <div class="carousel-label">Lifestyle</div>
+          </div>
+
+          <div class="carousel-slide">
+            <video class="carousel-video" loop muted playsinline preload="none"
+              src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115156_0006_jsbyr1.mp4">
+            </video>
+            <div class="carousel-label">Art Making</div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-next" aria-label="Next">&#8594;</button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+    <div class="carousel-counter"><span id="carouselCurrent">1</span> / <span id="carouselTotal">4</span></div>
+
+  </div>
+</div>
+
+<style>
+  .carousel-section {
+    background: #F7F5F2;
+    padding: 100px 0 80px;
+  }
+  .carousel-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .carousel-stage {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 48px;
+    position: relative;
+  }
+  .carousel-track-wrap {
+    flex: 1;
+    overflow: hidden;
+  }
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* Card */
+  .carousel-slide {
+    flex: 0 0 calc(33.333% - 10px);
+    position: relative;
+    background: #D8D5D0;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  @media (max-width: 600px) {
+    .carousel-slide { flex: 0 0 calc(33.333% - 10px); }
+    .carousel-stage { gap: 6px; }
+    .carousel-arrow { width: 28px; height: 28px; font-size: 11px; }
+    .carousel-label { font-size: 9px; padding: 3px 8px; bottom: 8px; }
+    .carousel-play-icon { width: 28px; height: 28px; }
+    .carousel-play-icon svg { width: 11px; height: 11px; }
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    .carousel-slide { flex: 0 0 calc(33.333% - 10px); }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .carousel-slide { flex: 0 0 calc(33.333% - 10px); }
+  }
+
+  /* Static placeholder for empty slots — no animation needed */
+  .carousel-slide.empty {
+    background: #E4E0DA;
+  }
+
+  .carousel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Always-visible play button — Social Stocks style */
+  .carousel-play-icon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px; height: 56px;
+    background: rgba(80,80,80,0.75);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .carousel-play-icon svg {
+    width: 22px; height: 22px;
+    fill: #fff;
+    margin-left: 3px; /* optical center for triangle */
+  }
+  .carousel-slide:hover .carousel-play-icon {
+    background: rgba(82,197,216,0.88);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .carousel-slide.playing .carousel-play-icon {
+    background: rgba(82,197,216,0.88);
+  }
+
+  /* Category pill at bottom — Social Stocks style */
+  .carousel-label {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #DDED8C;
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  /* Alternate pill colors like Social Stocks */
+  .carousel-slide:nth-child(odd) .carousel-label {
+    background: #DDED8C;
+  }
+  .carousel-slide:nth-child(even) .carousel-label {
+    background: #FFFFFF;
+  }
+  .carousel-slide.playing .carousel-label {
+    background: #52C5D8;
+    color: #fff;
+  }
+
+  /* Circle arrow buttons — outside track */
+  .carousel-arrow {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: #fff;
+    color: #0A0A0A;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .carousel-arrow:hover {
+    background: #0A0A0A;
+    color: #fff;
+    border-color: #0A0A0A;
+    transform: scale(1.08);
+  }
+  .carousel-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+    transform: none;
+    background: #fff;
+    color: #0A0A0A;
+  }
+
+  /* Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .carousel-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+    border: none;
+    padding: 0;
+  }
+  .carousel-dot.active { background: #52C5D8; transform: scale(1.4); }
+  .carousel-counter {
+    margin-top: 16px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #666;
+  }
+
+  @media (max-width: 600px) {
+    .carousel-stage { gap: 6px; }
+    .carousel-arrow { width: 28px; height: 28px; font-size: 11px; }
+    .carousel-label { font-size: 9px; padding: 3px 8px; bottom: 8px; }
+    .carousel-play-icon { width: 28px; height: 28px; }
+    .carousel-play-icon svg { width: 11px; height: 11px; }
+  }
+</style>
+
+<script>
+(function() {
+  const track    = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  const curEl    = document.getElementById('carouselCurrent');
+  const totEl    = document.getElementById('carouselTotal');
+  const prevBtn  = document.querySelector('.carousel-prev');
+  const nextBtn  = document.querySelector('.carousel-next');
+  const slides   = Array.from(track.querySelectorAll('.carousel-slide'));
+  const total    = slides.length;
+  const dotCount = 4;
+
+  totEl.textContent = dotCount;
+  let current = 0;
+
+  const playSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="6,3 20,12 6,21"/></svg>`;
+  const pauseSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
+
+  // Add play icon overlay + mark empty slides
+  slides.forEach(slide => {
+    const v = slide.querySelector('video');
+    // Mark placeholder slides
+    if (!v || v.src.includes('PASTE_PUBLIC_ID')) {
+      slide.classList.add('empty');
+      if (v) v.style.display = 'none';
+    }
+    // Always-visible play icon
+    const icon = document.createElement('div');
+    icon.className = 'carousel-play-icon';
+    icon.innerHTML = playSVG;
+    slide.appendChild(icon);
+  });
+
+  // Build dots — 4 only
+  for (let i = 0; i < dotCount; i++) {
+    const d = document.createElement('button');
+    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Slide group ' + (i + 1));
+    const targetSlide = Math.round(i * (total - 1) / (dotCount - 1));
+    d.addEventListener('click', () => goTo(targetSlide));
+    dotsWrap.appendChild(d);
+  }
+
+  function visibleCount() {
+    return 3;
+  }
+
+  function getSlideWidth() {
+    const gap = 10;
+    const wrapW = track.parentElement.offsetWidth;
+    const vc = visibleCount();
+    return (wrapW - gap * (vc - 1)) / vc;
+  }
+
+  function goTo(index) {
+    const vc = visibleCount();
+    const maxIndex = Math.max(0, total - vc);
+    current = Math.min(Math.max(index, 0), maxIndex);
+    const sw = getSlideWidth();
+    track.style.transform = `translateX(-${current * (sw + 10)}px)`;
+    // Sync dots — map current position to nearest of 4 dots
+    const activeDot = maxIndex === 0 ? 0 : Math.round((current / maxIndex) * (dotCount - 1));
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === activeDot));
+    curEl.textContent = activeDot + 1;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= maxIndex;
+    pauseAll();
+    playVisible();
+  }
+
+  function pauseAll() {
+    slides.forEach(s => {
+      const v = s.querySelector('video');
+      if (v) v.pause();
+      s.classList.remove('playing');
+      const icon = s.querySelector('.carousel-play-icon');
+      if (icon) icon.innerHTML = playSVG;
+    });
+  }
+
+  function playVisible() {
+    const vc = visibleCount();
+    for (let i = current; i < current + vc && i < total; i++) {
+      const slide = slides[i];
+      if (slide.classList.contains('empty')) continue;
+      const v = slide.querySelector('video');
+      if (v) {
+        v.play().catch(() => {});
+        slide.classList.add('playing');
+        const icon = slide.querySelector('.carousel-play-icon');
+        if (icon) icon.innerHTML = pauseSVG;
+      }
+    }
+  }
+
+  // Click to toggle play/pause
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      if (slide.classList.contains('empty')) return;
+      const v = slide.querySelector('video');
+      const icon = slide.querySelector('.carousel-play-icon');
+      if (!v) return;
+      if (v.paused) {
+        v.play();
+        slide.classList.add('playing');
+        if (icon) icon.innerHTML = pauseSVG;
+      } else {
+        v.pause();
+        slide.classList.remove('playing');
+        if (icon) icon.innerHTML = playSVG;
+      }
+    });
+  });
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Swipe support
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = tx - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => goTo(current));
+  // Lazy load carousel videos when section scrolls into view
+  const carouselSection = document.querySelector('.carousel-section');
+  if (carouselSection) {
+    const lazyObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        slides.forEach(slide => {
+          const v = slide.querySelector('video');
+          if (v && v.dataset.src && !v.src) {
+            v.src = v.dataset.src;
+          }
+        });
+        lazyObserver.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    lazyObserver.observe(carouselSection);
+  }
+
+  goTo(0);
+})();
+</script>
+
+<!-- SOCIAL PROOF -->
+<div class="proof-section reveal">
+  <div class="proof-inner">
+    <div style="text-align:center;">
+      <div class="section-tag">Real Creators. Real Results.</div>
+      <h2 class="section-heading">What they're <em>saying</em>.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"I was spending 4 hours a week just on content. Now I batch-post for the entire week in one Sunday morning. Total game changer for my skincare brand."</p>
+        <div class="proof-author">Sarah K. <span>— Beauty Brand Owner</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"The quality is insane for the price. My engagement literally doubled within 2 weeks of switching to this aesthetic. I've recommended it to every creator I know."</p>
+        <div class="proof-author">Marcus T. <span>— Travel Creator, 82K followers</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <p class="proof-text">"I use these for my café's Instagram and my clients' accounts as a freelancer. The commercial license alone is worth way more than $37. Bought it, never looked back."</p>
+        <div class="proof-author">Priya M. <span>— Social Media Manager</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="compare-section reveal">
+  <div class="section-tag">The Real Cost</div>
+  <h2 class="section-heading">Why pay thousands when <em>$37</em> does more?</h2>
+  <p class="section-sub">Let's be honest about what content actually costs you right now.</p>
+
+  <div class="compare-table">
+    <div class="compare-header">
+      <div>Content Method</div>
+      <div>Monthly Cost</div>
+      <div>Elan Visual</div>
+    </div>
+    <div class="compare-row">
+      <div>Social media agency</div>
+      <div class="cost">$500–$2,000/mo</div>
+      <div class="cost-ok">$37 once</div>
+    </div>
+    <div class="compare-row">
+      <div>Freelance video editor</div>
+      <div class="cost">$200–$600/mo</div>
+      <div class="cost-ok">$37 once</div>
+    </div>
+    <div class="compare-row">
+      <div>Stock video subscriptions</div>
+      <div class="cost">$50–$150/mo</div>
+      <div class="cost-ok">$37 once</div>
+    </div>
+    <div class="compare-row">
+      <div>DIY filming (time cost)</div>
+      <div class="cost">4–8 hrs/week</div>
+      <div class="cost-ok">60 seconds</div>
+    </div>
+    <div class="compare-row">
+      <div>Commercial license</div>
+      <div class="no">✗ Often excluded</div>
+      <div class="yes">✓ Included</div>
+    </div>
+    <div class="compare-row">
+      <div>Lifetime access</div>
+      <div class="no">✗ Subscription only</div>
+      <div class="yes">✓ Forever yours</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / OFFER -->
+<section class="cta-section" id="get-access">
+  <div class="cta-glow"></div>
+
+  <div class="urgency-pill">
+    <div class="pulse-dot"></div>
+    Launch offer — <strong id="spots2">47</strong> spots remaining at $37
+  </div>
+
+  <h2>Your next 30 days of content,<br><em>ready in the next 5 minutes.</em></h2>
+
+  <p>One payment. Instant access. No subscriptions. No hidden fees. Just 5,000+ videos waiting for you right now.</p>
+
+  <div class="offer-box">
+    <div class="offer-label">Elan Visual — Complete Pack</div>
+
+    <div class="offer-price">
+      <s>$97</s>
+      <span class="sup">$</span>
+      <span class="big-price">37</span>
+    </div>
+
+    <div class="offer-divider"></div>
+
+    <ul class="offer-features">
+      <li><span>✦</span> 5,000+ premium faceless stock videos</li>
+      <li><span>✦</span> 10+ niches & categories</li>
+      <li><span>✦</span> 9:16 vertical format — Reels & TikTok ready</li>
+      <li><span>✦</span> Full commercial license</li>
+      <li><span>✦</span> Instant download — access today</li>
+      <li><span>✦</span> Lifetime access — pay once, use forever</li>
+    </ul>
+
+    <div class="offer-divider"></div>
+
+    <!-- COUNTDOWN TIMER -->
+    <div class="offer-countdown">
+      <div class="offer-countdown-label">⏳ Price increases when timer hits zero</div>
+      <div class="offer-countdown-blocks">
+        <div class="cd-block">
+          <span class="cd-num" id="cd-hours">00</span>
+          <span class="cd-unit">Hours</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <span class="cd-num" id="cd-mins">00</span>
+          <span class="cd-unit">Mins</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <span class="cd-num" id="cd-secs">00</span>
+          <span class="cd-unit">Secs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-divider"></div>
+
+    <p class="spots-left">⚡ Only <strong id="spots3">47</strong> spots left at this price</p>
+
+    <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="btn-primary payhip-buy-btn" style="width:100%;justify-content:center;">
+      Yes, I Want Instant Access — $37
+    </a>
+
+    <div style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;line-height:1.6;">
+      🔒 Secure checkout &nbsp;·&nbsp; Instant delivery &nbsp;·&nbsp; Lifetime access
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<div class="faq-section reveal">
+  <div style="text-align:center;margin-bottom:60px;">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Questions <em>answered</em>.</h2>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What exactly do I get? <span class="faq-icon">+</span></div>
+    <div class="faq-a">You get instant access to 5,000+ faceless aesthetic stock videos across 6 categories, all in 9:16 vertical format. All files are downloadable and come with a full commercial license.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How does lifetime access work? <span class="faq-icon">+</span></div>
+    <div class="faq-a">You pay once — $37 — and the videos are yours forever. No monthly fee, no renewal, no expiry date. You also get any updates we add to the pack in the future, at no extra cost.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Can I use these for client work? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Yes! The commercial license covers use in your clients' content, social media, ads, and more. One purchase covers you and your business entirely.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What format are the videos? <span class="faq-icon">+</span></div>
+    <div class="faq-a">All videos are in 9:16 vertical format — optimized for Instagram Reels, TikTok, and Facebook Reels. Simply download, add your text or audio in Canva, CapCut, or any editor, and post.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Is this price going up? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Yes. The $37 price is a launch offer available only while spots remain. Once the launch period ends, the price returns to $97. Once you purchase at $37, your access is locked at that price forever.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:12px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--electric);letter-spacing:0.06em;">Elan Visual</p>
+  <p>© 2025 Elan Visual. All rights reserved. &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Contact</a></p>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="float-cta" id="floatCta">
+  <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="float-btn payhip-buy-btn">
+    Get Access — $37 →
+  </a>
+</div>
+
+<script>
+  // ── COUNTDOWN TIMER (evergreen — resets to 8hrs when 4 mins remain) ──
+  const TIMER_DURATION = 8 * 60 * 60 * 1000;
+  const RESET_THRESHOLD = 4 * 60 * 1000;
+
+  function getEndTime() {
+    let end = localStorage.getItem('elan_end');
+    if (!end) {
+      end = Date.now() + TIMER_DURATION;
+      try { localStorage.setItem('elan_end', end); } catch(e) {}
+    }
+    return parseInt(end);
+  }
+
+  let endTime = getEndTime();
+
+  function updateCountdown() {
+    const now = Date.now();
+    let diff = endTime - now;
+
+    // Reset to 8 hours when 4 minutes or less remain
+    if (diff <= RESET_THRESHOLD) {
+      endTime = Date.now() + TIMER_DURATION;
+      try { localStorage.setItem('elan_end', endTime); } catch(e) {}
+      diff = TIMER_DURATION;
+    }
+
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const hh = String(h).padStart(2,'0');
+    const mm = String(m).padStart(2,'0');
+    const ss = String(s).padStart(2,'0');
+
+    // Top bar
+    document.getElementById('countdown').textContent = hh + ':' + mm + ':' + ss;
+
+    // Offer box blocks
+    const cdH = document.getElementById('cd-hours');
+    const cdM = document.getElementById('cd-mins');
+    const cdS = document.getElementById('cd-secs');
+
+    if (cdH) cdH.textContent = hh;
+    if (cdM) cdM.textContent = mm;
+    if (cdS) {
+      const prev = cdS.textContent;
+      cdS.textContent = ss;
+      if (prev !== ss) {
+        cdS.classList.add('flash');
+        setTimeout(() => cdS.classList.remove('flash'), 300);
+      }
+    }
+
+    // Red flash when under 1 hour, reset color after timer resets
+    if (h === 0) {
+      if (cdH) cdH.style.color = '#E57373';
+      if (cdM) cdM.style.color = '#E57373';
+    } else {
+      if (cdH) cdH.style.color = '';
+      if (cdM) cdM.style.color = '';
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // ── SPOTS COUNTDOWN ──
+  const SPOTS_KEY = 'elan_spots';
+  let spots = parseInt(localStorage.getItem(SPOTS_KEY) || '47');
+
+  function updateSpots(n) {
+    document.querySelectorAll('#spots,#spots-m,#spots2,#spots3').forEach(el => el.textContent = n);
+  }
+
+  updateSpots(spots);
+
+  // Slowly decrease spots every few minutes
+  setInterval(() => {
+    if (spots > 12 && Math.random() > 0.5) {
+      spots = Math.max(12, spots - 1);
+      try { localStorage.setItem(SPOTS_KEY, spots); } catch(e) {}
+      updateSpots(spots);
+    }
+  }, 120000);
+
+  // ── REVEAL ON SCROLL ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // ── FLOATING CTA ──
+  const floatCta = document.getElementById('floatCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) floatCta.classList.add('visible');
+    else floatCta.classList.remove('visible');
+  });
+
+  // ── STAT COUNTER ANIMATION ──
+  const statCards = document.querySelectorAll('.stat-card');
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('.stat-value[data-target]').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
+        const update = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+          el.textContent = current.toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      });
+      statObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+
+  statCards.forEach(card => statObserver.observe(card));
+
+  // ── FAQ TOGGLE ──
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ── CATEGORY STRIP — click to play inline ──
+  const playSVG  = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;fill:#0A0A0A;margin-left:3px;"><polygon points="6,3 20,12 6,21"/></svg>`;
+  const pauseSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;fill:#0A0A0A;"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
+
+  document.querySelectorAll('.strip-card').forEach(card => {
+    const video = card.querySelector('video');
+    if (!video || !video.dataset.src) return;
+
+    // Add play button overlay
+    const btn = document.createElement('div');
+    btn.className = 'strip-play-btn';
+    btn.innerHTML = playSVG;
+    card.appendChild(btn);
+
+    card.addEventListener('click', () => {
+      // Lazy load src on first click
+      if (!video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+      }
+
+      if (video.paused) {
+        // Pause all other playing strip videos
+        document.querySelectorAll('.strip-card.playing').forEach(c => {
+          const v = c.querySelector('video');
+          const b = c.querySelector('.strip-play-btn');
+          if (v) { v.pause(); v.muted = true; }
+          if (b) b.innerHTML = playSVG;
+          c.classList.remove('playing');
+        });
+        // Play with sound
+        video.muted = false;
+        video.volume = 1;
+        video.play().catch(() => {
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+        card.classList.add('playing');
+        btn.innerHTML = pauseSVG;
+      } else {
+        video.pause();
+        video.muted = true;
+        card.classList.remove('playing');
+        btn.innerHTML = playSVG;
+      }
+    });
+  });
+</script>
+</body>
+</html>
