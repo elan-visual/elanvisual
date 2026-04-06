@@ -6,9 +6,6 @@
 <meta name="description" content="5,000+ faceless aesthetic stock videos for Instagram Reels & TikTok. One-time $37. Lifetime access.">
 <title>Elan Visual — 5000+ Faceless Aesthetic Stock Videos</title>
 
-<!-- Payhip -->
-<script src="https://payhip.com/payhip.js"></script>
-
 <!-- Preconnect for faster font load -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -218,137 +215,161 @@
   }
   .trust-div { width: 1px; background: var(--border); align-self: stretch; }
 
-/* ── UPDATED VIDEO PREVIEW CAROUSEL ── */
-.preview-strip {
-  padding: 80px 24px 60px;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  /* ── VIDEO PREVIEW STRIP ── */
+  .preview-strip {
+    padding: 80px 0 60px;
+    overflow: hidden;
+    position: relative;
+  }
+  .strip-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .strip-track {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .strip-card {
+    flex-shrink: 0;
+    height: 300px;
+    background: #F0EEEB;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  /* Category label — bottom pill */
+  .strip-card::before {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #DDED8C;
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  /* Video inside card */
+  .strip-card video {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: block;
+  }
+  /* Dark neutral background while first frame is loading */
+  .strip-card { background: #111; }
 
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
+  /* ── STRIP NAVIGATION ── */
+  .preview-strip { overflow: visible; }
+  .strip-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .strip-overflow {
+    flex: 1;
+    overflow: hidden;
+  }
+  .strip-arrow {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: #fff;
+    color: #0A0A0A;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .strip-arrow:hover {
+    background: #0A0A0A;
+    color: #fff;
+    border-color: #0A0A0A;
+    transform: scale(1.08);
+  }
+  .strip-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+    transform: none;
+    background: #fff;
+    color: #0A0A0A;
+    border-color: rgba(0,0,0,0.15);
+  }
+  /* Strip play button */
+  .strip-play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px; height: 48px;
+    background: rgba(10,10,10,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    transition: background 0.2s, transform 0.2s;
+    pointer-events: none;
+  }
+  .strip-play-btn svg {
+    width: 18px; height: 18px;
+    fill: #fff;
+  }
+  .strip-play-btn.is-play svg { margin-left: 3px; }
+  .strip-card:hover .strip-play-btn { background: rgba(82,197,216,0.9); transform: translate(-50%, -50%) scale(1.1); }
+  .strip-card.playing .strip-play-btn { background: rgba(82,197,216,0.9); }
 
-.strip-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
-  padding: 10px 0;
-}
+  /* Hero video wrap — responsive YouTube embed */
+  .hero-video-wrap {
+    margin-top: 48px;
+    width: 100%;
+    max-width: 760px;
+    padding: 0 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+  .hero-video-wrap iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.12);
+  }
 
-.strip-track::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
-.strip-card {
-  width: 240px;
-  height: 340px;
-  flex-shrink: 0;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #f0f0f0;
-}
-
-.strip-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Category Label */
-.strip-card::before {
-  content: attr(data-label);
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  background: var(--lime);
-  color: var(--black);
-  padding: 4px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-
-/* Play Button - Clean, no overlay */
-.strip-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.strip-play-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: var(--black);
-  margin-left: 3px;
-}
-
-.strip-card.playing .strip-play-btn {
-  background: var(--electric);
-}
-
-.strip-card.playing .strip-play-btn svg {
-  fill: #fff;
-  margin-left: 0; /* Center the pause icon */
-}
-
-/* Navigation Arrows */
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 20;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.nav-arrow:hover {
-  background: var(--bg-soft);
-  border-color: var(--electric);
-}
-
-.nav-arrow.prev { left: -22px; }
-.nav-arrow.next { right: -22px; }
-
-@media (max-width: 768px) {
-  .nav-arrow { display: none; } /* Hide arrows on mobile for touch scrolling */
-  .preview-strip { padding: 40px 16px; }
-  .strip-card { width: 180px; height: 260px; }
-}
+  /* Strip mobile sizing */
+  @media (max-width: 500px) {
+    .strip-card { height: 200px; }
+    .strip-arrow { width: 34px; height: 34px; font-size: 13px; }
+    .strip-nav { gap: 8px; padding: 0 12px; }
+    .strip-play-btn { width: 38px; height: 38px; }
+    .strip-play-btn svg { width: 14px; height: 14px; }
+  }
 
   /* ── PERFORMANCE: skip rendering off-screen sections ── */
   .proof-section,
@@ -745,6 +766,78 @@
       gap: 20px;
     }
     .inside-card-6-pills { width: 100%; }
+  }
+
+  /* ── PRODUCT SHOWCASE ── */
+  .product-showcase {
+    padding: 80px 24px 60px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .product-showcase img {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.1);
+  }
+  @media (max-width: 600px) {
+    .product-showcase img { max-width: 300px; }
+  }
+
+  /* ── PROOF PHOTO CAROUSEL ── */
+  .proof-carousel-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+  .proof-carousel-overflow {
+    flex: 1;
+    overflow: hidden;
+  }
+  .proof-carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .proof-carousel-slide {
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+  .proof-carousel-slide img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+  }
+  .proof-carousel-arrow {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: #fff;
+    color: #0A0A0A;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .proof-carousel-arrow:hover { background: #0A0A0A; color: #fff; border-color: #0A0A0A; transform: scale(1.08); }
+  .proof-carousel-arrow:disabled { opacity: 0.25; cursor: default; transform: none; background: #fff; color: #0A0A0A; }
+  @media (max-width: 600px) {
+    .proof-carousel-wrap { gap: 8px; }
+    .proof-carousel-arrow { width: 34px; height: 34px; font-size: 13px; }
+    .proof-carousel-slide img { height: 240px; }
   }
 
   /* ── SOCIAL PROOF ── */
@@ -1227,7 +1320,7 @@
       <strong>$37</strong>
       <span>— one-time · lifetime access</span>
     </div>
-    <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="btn-primary payhip-buy-btn">
+    <a href="https://payhip.com/b/3F96y" class="btn-primary" target="_blank" rel="noopener">
       Get Instant Access — $37
       <span>→</span>
     </a>
@@ -1235,13 +1328,13 @@
   </div>
 
   <div class="hero-video-wrap">
-    <iframe
-      src="https://www.youtube.com/embed/KfBP6gYr2zk?rel=0&modestbranding=1"
-      title="Elan Visual Preview"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <video
+      src="https://res.cloudinary.com/dubrxzadh/video/upload/v1775411208/copy_7741384E-A1A1-47EF-A479-BC7B63908226_g1ymnv.mov"
+      controls
+      playsinline
+      preload="metadata"
+      style="width:100%;display:block;border-radius:2px;box-shadow:0 16px 60px rgba(0,0,0,0.12);">
+    </video>
   </div>
 
 
@@ -1270,88 +1363,47 @@
 
 <!-- VIDEO PREVIEW STRIP -->
 <div class="preview-strip">
-<section class="preview-strip">
-  <div class="strip-label">Explore the Categories</div>
-  
-  <div class="carousel-container">
-    <button class="nav-arrow prev" onclick="moveCarousel(-1)">←</button>
-    
-    <div class="strip-track" id="categoryTrack">
-      <div class="strip-card" data-label="Travel & Nature">
-        <video muted playsinline loop data-src="https://res.cloudinary.com/diyuojas1/video/upload/q_auto/f_auto/v1774936877/ELAN_TRAVEL_3_300_q4nrfd.mp4"></video>
-      </div>
-      <div class="strip-card" data-label="Minimal Interiors">
-        <video muted playsinline loop data-src="VIDEO_URL_2"></video>
-      </div>
-      <div class="strip-card" data-label="Self-Care">
-        <video muted playsinline loop data-src="VIDEO_URL_3"></video>
-      </div>
-      <div class="strip-card" data-label="Urban Lifestyle">
-        <video muted playsinline loop data-src="VIDEO_URL_4"></video>
-      </div>
-      <div class="strip-card" data-label="Productivity">
-        <video muted playsinline loop data-src="VIDEO_URL_5"></video>
+  <p class="strip-label">Categories included in your pack</p>
+  <div class="strip-nav">
+    <button class="strip-arrow strip-prev" id="stripPrev" aria-label="Previous">&#8592;</button>
+    <div class="strip-overflow">
+      <div class="strip-track" id="stripTrack">
+        <div class="strip-card" data-label="Lifestyle">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Unisex">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_UNISEX_LUXURY_300_fava6j.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Luxury">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LUXURY_3_300_bvfovm.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Aesthetic">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_yebjyb.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Travel">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_3_300_q4nrfd.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Girl Boss">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_20260326_115235_0012_vdblqm.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Lifestyle">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_4_350_otoyfl.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Aesthetic">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_AESTHETIC_1_330_la2kns.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Travel">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_TRAVEL_2_320_er9jmp.mp4"></video>
+        </div>
+        <div class="strip-card" data-label="Luxury">
+          <video loop playsinline preload="metadata" src="https://res.cloudinary.com/diyuojas1/video/upload/ELAN_LIFESTYLE_1_250_u1hxjz.mp4"></video>
+        </div>
       </div>
     </div>
-
-    <button class="nav-arrow next" onclick="moveCarousel(1)">→</button>
+    <button class="strip-arrow strip-next" id="stripNext" aria-label="Next">&#8594;</button>
   </div>
-</section>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('categoryTrack');
-  const playSVG = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
-  const pauseSVG = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
+</div>
 
-  // Initialize Play Buttons
-  document.querySelectorAll('.strip-card').forEach(card => {
-    const video = card.querySelector('video');
-    const btn = document.createElement('div');
-    btn.className = 'strip-play-btn';
-    btn.innerHTML = playSVG;
-    card.appendChild(btn);
-
-    card.addEventListener('click', () => {
-      // Lazy load video source on click
-      if (!video.src && video.dataset.src) {
-        video.src = video.dataset.src;
-      }
-
-      if (video.paused) {
-        // Stop any other playing videos
-        document.querySelectorAll('.strip-card.playing').forEach(otherCard => {
-          const v = otherCard.querySelector('video');
-          const b = otherCard.querySelector('.strip-play-btn');
-          v.pause();
-          v.muted = true;
-          b.innerHTML = playSVG;
-          otherCard.classList.remove('playing');
-        });
-
-        // Play current video with sound
-        video.muted = false;
-        video.play();
-        card.classList.add('playing');
-        btn.innerHTML = pauseSVG;
-      } else {
-        video.pause();
-        video.muted = true;
-        card.classList.remove('playing');
-        btn.innerHTML = playSVG;
-      }
-    });
-  });
-});
-// Arrow Navigation Function
-function moveCarousel(direction) {
-  const track = document.getElementById('categoryTrack');
-  const scrollAmount = 300; // Adjust based on card width
-  track.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
-}
-</script>
 <!-- PAIN POINTS -->
 <div class="section reveal">
   <div class="section-tag">The Real Problem</div>
@@ -1933,12 +1985,46 @@ function moveCarousel(direction) {
 })();
 </script>
 
+<!-- PRODUCT SHOWCASE -->
+<div class="product-showcase reveal">
+  <div class="section-tag">The Product</div>
+  <h2 class="section-heading" style="font-size:clamp(28px,4vw,48px);">Everything you need, <em>in one pack.</em></h2>
+  <img
+    src="ads elan.png"
+    alt="Elan Visual — Less shooting, more posting. 5000+ videos, $37."
+    loading="lazy"
+    width="420"
+    height="560"
+  />
+</div>
+
 <!-- SOCIAL PROOF -->
 <div class="proof-section reveal">
   <div class="proof-inner">
     <div style="text-align:center;">
       <div class="section-tag">Real Creators. Real Results.</div>
       <h2 class="section-heading">What they're <em>saying</em>.</h2>
+      <p class="section-sub" style="margin-bottom:40px;">Over 1,000 creators and brands already use Elan Visual to post consistently.</p>
+    </div>
+    <div class="proof-carousel-wrap">
+      <button class="proof-carousel-arrow" id="proofPrev" aria-label="Previous">&#8592;</button>
+      <div class="proof-carousel-overflow">
+        <div class="proof-carousel-track" id="proofTrack">
+          <div class="proof-carousel-slide">
+            <img src="https://cdn.scalev.id/uploads/1762498497/vgLJPGwYcWre4LcgZ6lf5A/1762498497252-IMG_5492.jpeg" alt="Creator result with Elan Visual" loading="lazy">
+          </div>
+          <div class="proof-carousel-slide">
+            <img src="https://cdn.scalev.id/uploads/1762498509/V5J3uLMX8MkXXgZijtqgyA/1762498509863-IMG_5493.jpeg" alt="Creator result with Elan Visual" loading="lazy">
+          </div>
+          <div class="proof-carousel-slide">
+            <img src="https://cdn.scalev.id/uploads/1762498521/2iCTU-7nu1deiUaNTuwk8g/1762498521148-IMG_5494.jpeg" alt="Creator result with Elan Visual" loading="lazy">
+          </div>
+          <div class="proof-carousel-slide">
+            <img src="https://cdn.scalev.id/uploads/1762498530/KBEZABvotB5lZ4ZTaXMI5g/1762498530243-IMG_5495.jpeg" alt="Creator result with Elan Visual" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <button class="proof-carousel-arrow" id="proofNext" aria-label="Next">&#8594;</button>
     </div>
     <div class="proof-grid">
       <div class="proof-card">
@@ -2065,7 +2151,7 @@ function moveCarousel(direction) {
 
     <p class="spots-left">⚡ Only <strong id="spots3">47</strong> spots left at this price</p>
 
-    <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="btn-primary payhip-buy-btn" style="width:100%;justify-content:center;">
+    <a href="https://payhip.com/b/3F96y" class="btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
       Yes, I Want Instant Access — $37
     </a>
 
@@ -2108,47 +2194,54 @@ function moveCarousel(direction) {
 
 <!-- FOOTER -->
 <footer>
-  <p style="margin-bottom:12px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--electric);letter-spacing:0.06em;">Elan Visual</p>
+  <img
+    src="https://cdn.scalev.id/Store/QUhfJtRaWcjelVlSrwMRZkdc/Black-White-Modern-Simple-Minimalist-Beauty-Brand-Logo.png"
+    alt="Elan Visual"
+    width="64" height="64"
+    style="border-radius:6px;margin-bottom:12px;display:inline-block;"
+    loading="lazy"
+  />
   <p>© 2025 Elan Visual. All rights reserved. &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Contact</a></p>
 </footer>
 
 <!-- FLOATING CTA -->
 <div class="float-cta" id="floatCta">
-  <a href="https://payhip.com/b/YOUR_PRODUCT_ID" data-payhip-overlay class="float-btn payhip-buy-btn">
+  <a href="https://payhip.com/b/3F96y" class="float-btn" target="_blank" rel="noopener">
     Get Access — $37 →
   </a>
 </div>
 
 <script>
-  // ── COUNTDOWN TIMER (evergreen — resets to 8hrs when 4 mins remain) ──
-  const TIMER_DURATION = 8 * 60 * 60 * 1000;
-  const RESET_THRESHOLD = 4 * 60 * 1000;
+  // ── COUNTDOWN TIMER — evergreen 8hr, resets at 4 min ──
+  const TIMER_DURATION = 8 * 60 * 60 * 1000; // 8 hours
+  const TIMER_RESET_AT = 4 * 60 * 1000;       // reset when ≤ 4 minutes left
 
   function getEndTime() {
-    let end = localStorage.getItem('elan_end');
-    if (!end) {
+    let end = parseInt(localStorage.getItem('elan_end') || '0');
+    // If expired or not set, start fresh 8-hour window
+    if (!end || Date.now() >= end) {
       end = Date.now() + TIMER_DURATION;
       try { localStorage.setItem('elan_end', end); } catch(e) {}
     }
-    return parseInt(end);
+    return end;
   }
 
   let endTime = getEndTime();
 
   function updateCountdown() {
-    const now = Date.now();
-    let diff = endTime - now;
+    const now  = Date.now();
+    let diff   = endTime - now;
 
-    // Reset to 8 hours when 4 minutes or less remain
-    if (diff <= RESET_THRESHOLD) {
-      endTime = Date.now() + TIMER_DURATION;
+    // Evergreen reset: when ≤ 4 min left, silently restart the 8-hour clock
+    if (diff <= TIMER_RESET_AT) {
+      endTime = now + TIMER_DURATION;
       try { localStorage.setItem('elan_end', endTime); } catch(e) {}
       diff = TIMER_DURATION;
     }
 
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
+    const h  = Math.floor(diff / 3600000);
+    const m  = Math.floor((diff % 3600000) / 60000);
+    const s  = Math.floor((diff % 60000) / 1000);
     const hh = String(h).padStart(2,'0');
     const mm = String(m).padStart(2,'0');
     const ss = String(s).padStart(2,'0');
@@ -2172,7 +2265,7 @@ function moveCarousel(direction) {
       }
     }
 
-    // Red flash when under 1 hour, reset color after timer resets
+    // Red tint when under 1 hour
     if (h === 0) {
       if (cdH) cdH.style.color = '#E57373';
       if (cdM) cdM.style.color = '#E57373';
@@ -2253,52 +2346,153 @@ function moveCarousel(direction) {
     });
   });
 
-  // ── CATEGORY STRIP — click to play inline ──
-  const playSVG  = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;fill:#0A0A0A;margin-left:3px;"><polygon points="6,3 20,12 6,21"/></svg>`;
-  const pauseSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;fill:#0A0A0A;"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
+  // ── CATEGORY STRIP — carousel + click-to-play with sound ──
+  (function() {
+    const track   = document.getElementById('stripTrack');
+    const prevBtn = document.getElementById('stripPrev');
+    const nextBtn = document.getElementById('stripNext');
+    if (!track) return;
 
-  document.querySelectorAll('.strip-card').forEach(card => {
-    const video = card.querySelector('video');
-    if (!video || !video.dataset.src) return;
+    const cards = Array.from(track.querySelectorAll('.strip-card'));
+    const total = cards.length;
+    let current = 0;
 
-    // Add play button overlay
-    const btn = document.createElement('div');
-    btn.className = 'strip-play-btn';
-    btn.innerHTML = playSVG;
-    card.appendChild(btn);
+    const playSVG  = `<svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>`;
+    const pauseSVG = `<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>`;
 
-    card.addEventListener('click', () => {
-      // Lazy load src on first click
-      if (!video.src && video.dataset.src) {
-        video.src = video.dataset.src;
-      }
-
-      if (video.paused) {
-        // Pause all other playing strip videos
-        document.querySelectorAll('.strip-card.playing').forEach(c => {
-          const v = c.querySelector('video');
-          const b = c.querySelector('.strip-play-btn');
-          if (v) { v.pause(); v.muted = true; }
-          if (b) b.innerHTML = playSVG;
-          c.classList.remove('playing');
-        });
-        // Play with sound
-        video.muted = false;
-        video.volume = 1;
-        video.play().catch(() => {
-          video.muted = true;
-          video.play().catch(() => {});
-        });
-        card.classList.add('playing');
-        btn.innerHTML = pauseSVG;
-      } else {
-        video.pause();
-        video.muted = true;
-        card.classList.remove('playing');
-        btn.innerHTML = playSVG;
-      }
+    // Inject play button overlay into every card
+    cards.forEach(card => {
+      const btn = document.createElement('div');
+      btn.className = 'strip-play-btn is-play';
+      btn.innerHTML = playSVG;
+      card.appendChild(btn);
     });
-  });
+
+    function pauseAll() {
+      cards.forEach(card => {
+        const v   = card.querySelector('video');
+        const btn = card.querySelector('.strip-play-btn');
+        if (v && !v.paused) v.pause();
+        card.classList.remove('playing');
+        if (btn) { btn.className = 'strip-play-btn is-play'; btn.innerHTML = playSVG; }
+      });
+    }
+
+    // Click to play/pause with sound
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const v   = card.querySelector('video');
+        const btn = card.querySelector('.strip-play-btn');
+        if (!v) return;
+
+        if (v.paused) {
+          pauseAll();
+          v.muted = false;
+          v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+          card.classList.add('playing');
+          if (btn) { btn.className = 'strip-play-btn'; btn.innerHTML = pauseSVG; }
+        } else {
+          v.pause();
+          card.classList.remove('playing');
+          if (btn) { btn.className = 'strip-play-btn is-play'; btn.innerHTML = playSVG; }
+        }
+      });
+    });
+
+    // ── Carousel navigation ──
+    function visibleCount() {
+      const w = track.parentElement.offsetWidth;
+      if (w < 500) return 2;
+      if (w < 768) return 3;
+      if (w < 1024) return 4;
+      return 5;
+    }
+
+    function cardWidth() {
+      return (track.parentElement.offsetWidth - 16 * (visibleCount() - 1)) / visibleCount();
+    }
+
+    function updateCardWidths() {
+      const cw = cardWidth();
+      cards.forEach(c => { c.style.width = cw + 'px'; });
+    }
+
+    function goTo(index) {
+      const maxIdx = Math.max(0, total - visibleCount());
+      current = Math.min(Math.max(index, 0), maxIdx);
+      track.style.transform = `translateX(-${current * (cardWidth() + 16)}px)`;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIdx;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    let touchX = 0;
+    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+    });
+
+    window.addEventListener('resize', () => { updateCardWidths(); goTo(current); });
+
+    updateCardWidths();
+    goTo(0);
+  })();
+
+  // ── PROOF PHOTO CAROUSEL ──
+  (function() {
+    const track   = document.getElementById('proofTrack');
+    const prevBtn = document.getElementById('proofPrev');
+    const nextBtn = document.getElementById('proofNext');
+    if (!track) return;
+
+    const slides = Array.from(track.querySelectorAll('.proof-carousel-slide'));
+    const total  = slides.length;
+    let current  = 0;
+
+    function visibleCount() {
+      const w = track.parentElement.offsetWidth;
+      if (w < 500) return 1;
+      if (w < 900) return 2;
+      return 3;
+    }
+
+    function slideWidth() {
+      const gap = 16;
+      const vc  = visibleCount();
+      return (track.parentElement.offsetWidth - gap * (vc - 1)) / vc;
+    }
+
+    function updateWidths() {
+      const sw = slideWidth();
+      slides.forEach(s => { s.style.width = sw + 'px'; });
+    }
+
+    function goTo(index) {
+      const maxIdx = Math.max(0, total - visibleCount());
+      current = Math.min(Math.max(index, 0), maxIdx);
+      track.style.transform = `translateX(-${current * (slideWidth() + 16)}px)`;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIdx;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    let tx = 0;
+    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = tx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+    });
+
+    window.addEventListener('resize', () => { updateWidths(); goTo(current); });
+
+    updateWidths();
+    goTo(0);
+  })();
 </script>
 </body>
 </html>
